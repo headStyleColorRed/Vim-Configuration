@@ -1,5 +1,6 @@
 syntax on
 
+set mouse=r
 set guicursor=
 set noshowmatch
 set relativenumber
@@ -11,13 +12,14 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set nowrap
+set wrap
 set smartcase
 set noswapfile
 set nobackup
 set incsearch
 set termguicolors
 set scrolloff=8
+set splitbelow
 
 " _ _ _ P L U G I N S _ _ _ "
 call plug#begin('~/.vim/plugged')
@@ -25,6 +27,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
+Plug 'maralla/completor.vim'
+Plug 'townk/vim-autoclose'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -48,3 +53,7 @@ let g:lightline = {
 nmap <C-f> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+
+" _ _ _ S Y N T A X   C H E C K E R   _ _ _ "
